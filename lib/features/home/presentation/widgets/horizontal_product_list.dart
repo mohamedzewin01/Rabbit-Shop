@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/features/home/presentation/widgets/vegetable_card.dart';
+import 'package:grocery_app/features/home/presentation/widgets/product_card.dart';
 
 import '../../../../models/dto/product.dart';
 
@@ -19,7 +19,7 @@ class HorizontalProductList extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  VegetableCardWidget(
+                  ProductCardWidget(
                     product: Product(
                       id: ' 1',
                       productname: "Tomato",

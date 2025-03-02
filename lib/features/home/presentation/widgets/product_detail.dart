@@ -5,11 +5,12 @@ import 'package:get/get.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
 import '../../../../generated/assets.dart';
+import '../../../../models/dto/cart.dart';
 import '../../../../models/dto/product.dart';
 import '../../../../views/common_widgets/appBar.dart';
 
-class VegetableDetailScreen extends StatelessWidget {
-  const VegetableDetailScreen({super.key, required this.product});
+class ProductDetailScreen extends StatelessWidget {
+  const ProductDetailScreen({super.key, required this.product});
 
   final Product product;
 
@@ -42,13 +43,13 @@ class VegetableDetailScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.symmetric(vertical: 8),
                     decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [
-                              ColorManager.white,
-                              ColorManager.white2,
-                            ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter),
+                        // gradient: LinearGradient(
+                        //     colors: [
+                        //       ColorManager.white,
+                        //       ColorManager.white2,
+                        //     ],
+                        //     begin: Alignment.topCenter,
+                        //     end: Alignment.bottomCenter),
                         // color: Colors.white,
                         border: Border(
                             bottom: BorderSide(
@@ -134,32 +135,33 @@ class VegetableDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: 5,
-              itemBuilder: (context, index) => CachedNetworkImage(
-                imageUrl: product.imagefronturl ?? "",
-                width: 140,
-                height: 180,
-                filterQuality: FilterQuality.low,
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              ),
-            ),
-          ),
+          // Expanded(
+          //   child: ListView.builder(
+          //     scrollDirection: Axis.horizontal,
+          //     shrinkWrap: true,
+          //     itemCount: 5,
+          //     itemBuilder: (context, index) =>
+          //         CachedNetworkImage(
+          //           imageUrl: product.imagefronturl ?? "",
+          //           width: 140,
+          //           height: 180,
+          //           filterQuality: FilterQuality.low,
+          //           errorWidget: (context, url, error) => Icon(Icons.error),
+          //         ),
+          //   ),
+          // ),
+
           Expanded(
             flex: 0,
             child: Container(
               padding: const EdgeInsets.all(16.0),
-              color: ColorManager.primaryColor.withAlpha(30),
+              color: Get.theme.cardColor.withOpacity(0.6),
               child: Column(
                 children: [
                   SizedBox(
                     height: 8,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         children: [
@@ -181,6 +183,18 @@ class VegetableDetailScreen extends StatelessWidget {
                       SizedBox(
                         width: 8,
                       ),
+                      Expanded(
+                        flex: 1,
+                        child: _buildCartActions(CartItem(
+                            id: '32',
+                            imagefrontsmallurl: '232',
+                            imagefronturl: 'imagefronturl',
+                            productname: 'productname',
+                            quantity: 'quantity',
+                            price: 'price',
+                            categories: 'categories',
+                            itemQuantity: 3)),
+                      )
                     ],
                   ),
                 ],
@@ -192,5 +206,68 @@ class VegetableDetailScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildCartNoActions() {
+    return ElevatedButton(
+      onPressed: () {
+        // cartViewModel.addToCart(CartItem(
+        //   id: product.id,
+        //   productname: product.productname,
+        //   price: product.price,
+        //   quantity: product.quantity,
+        //   itemQuantity: 1,
+        //   imagefrontsmallurl: product.imagefrontsmallurl,
+        //   imagefronturl: product.imagefronturl,
+        //   categories: product.categories,
+        // ));
+      },
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        shape: StadiumBorder(),
+        backgroundColor: Get.theme.primaryColor,
+      ),
+      child: Text(
+        "Add to cart",
+        style: TextStyle(color: Colors.white),
+      ),
+    );
+  }
 
+  Widget _buildCartActions(CartItem cartItem) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        InkResponse(
+          onTap: () {
+            // cartViewModel.addToCart(cartItem);
+          },
+          child: Image.asset(
+            Assets.imagesAddIcon,
+            width: 40,
+            height: 40,
+          ),
+        ),
+        SizedBox(width: 20),
+        Text(
+          (cartItem.itemQuantity).toString(),
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(width: 20),
+        InkResponse(
+          onTap: () {
+            // cartViewModel.removeFromCart(cartItem);
+          },
+          child: Image.asset(
+            Assets.imagesRemoveIcon,
+            width: 40,
+            height: 40,
+          ),
+        ),
+      ],
+    );
+  }
 }

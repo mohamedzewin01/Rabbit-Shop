@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/features/home/presentation/widgets/vegetable_card.dart';
+import 'package:grocery_app/features/home/presentation/widgets/product_card.dart';
 
 import '../../../../models/dto/product.dart';
 
@@ -21,7 +21,7 @@ class ProductsView extends StatelessWidget {
             crossAxisSpacing: 8,
             mainAxisExtent: 200,
           ),
-          itemBuilder: (context, index) => VegetableCardWidget(
+          itemBuilder: (context, index) => ProductCardWidget(
             product: Product(
               id: ' 1',
               productname: "Tomato",

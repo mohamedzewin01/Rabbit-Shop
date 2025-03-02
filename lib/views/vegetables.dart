@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../constants/assets.dart';
+
 import '../domain/productViewModel.dart';
+import '../features/home/presentation/widgets/product_card.dart';
 import '../generated/assets.dart';
 import '../models/dto/product.dart';
 import '../utils/myStates.dart';
 import 'common_widgets/appBar.dart';
 import 'common_widgets/loading_indicator.dart';
 import 'common_widgets/search_text_field.dart';
-import '../features/home/presentation/widgets/vegetable_card.dart';
 
 class VegetablesScreen extends StatefulWidget {
   VegetablesScreen({Key? key}) : super(key: key);
@@ -92,7 +92,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
                           if (index < _productList.length) {
                             print(
                                 "product list in ui length =>${_productList.length}");
-                            return VegetableCardWidget(
+                            return ProductCardWidget(
                               product: _productList[index],
                             );
                           } else if (index == _productList.length) {
