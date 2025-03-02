@@ -1,4 +1,4 @@
-# grocery_app
+# Rabbiyt_app
 
 A new Flutter project.
 
