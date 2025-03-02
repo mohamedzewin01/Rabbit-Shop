@@ -13,6 +13,8 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+	<key>NSAllowsArbitraryLoads</key>
+    <true/>
 	<string>grocery_app</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>

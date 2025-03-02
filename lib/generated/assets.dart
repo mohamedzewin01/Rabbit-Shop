@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsImagesBack = 'assets/images/Back.svg~';
   static const String imagesAddIcon = 'assets/images/add_icon.png';
   static const String imagesAppIcon = 'assets/images/app_icon.png';
   static const String imagesArExperience = 'assets/images/ar_experience.webp';
@@ -13,6 +14,7 @@ class Assets {
   static const String imagesCalories = 'assets/images/calories.png';
   static const String imagesCart = 'assets/images/cart.svg';
   static const String imagesCategories = 'assets/images/categories.svg';
+  static const String imagesClosedCart = 'assets/images/closed_cart.png';
   static const String imagesDish = 'assets/images/dish.png';
   static const String imagesEmptyCart = 'assets/images/empty_cart.png';
   static const String imagesEmptyList = 'assets/images/empty_list.png';

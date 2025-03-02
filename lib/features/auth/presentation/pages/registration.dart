@@ -4,7 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 import 'package:grocery_app/core/resources/routes_manager.dart';
 
-import '../generated/assets.dart';
+import '../../../../generated/assets.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});

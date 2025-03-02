@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/core/resources/color_manager.dart';
 
 import '../../../../constants/appConstantsApi.dart';
 import '../../../../generated/assets.dart';
-import '../../../../views/common_widgets/profileList.dart';
+import '../widgets/profileList.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -13,7 +14,7 @@ class Profile extends StatelessWidget {
   static final Email email = Email(
     body: '',
     subject: 'subject',
-    recipients: ['rami.omar.ayache@gmail.com'],
+    recipients: ['mohammedzewin01@gmail.com'],
     isHTML: false,
   );
 
@@ -46,7 +47,7 @@ class Profile extends StatelessWidget {
                       height: 35,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: Get.theme.primaryColor),
+                          color: ColorManager.primaryColor),
                       child: const Icon(
                         Icons.camera_alt_rounded,
                         color: Colors.white,
@@ -92,8 +93,9 @@ class Profile extends StatelessWidget {
                   icon: Icons.developer_mode_rounded,
                   endIcon: false,
                   onPress: () {
-                    Get.dialog(
-                      Dialog(
+                    showDialog(
+                      context: context,
+                      builder: (context) => Dialog(
                         child: Container(
                           padding: EdgeInsets.all(16.0),
                           child: Column(
@@ -143,9 +145,8 @@ class Profile extends StatelessWidget {
                                   Expanded(
                                     flex: 1,
                                     child: ElevatedButton(
-                                      onPressed: () async => {
-                                        await Get.to(() =>
-                                            FlutterEmailSender.send(email))
+                                      onPressed: () async {
+                                        await FlutterEmailSender.send(email);
                                       }, // Close the dialog
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Get.theme.primaryColor,

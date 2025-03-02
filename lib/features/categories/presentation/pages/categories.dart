@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
-import 'package:grocery_app/core/widgets/custom_text_form_field.dart';
 import 'package:grocery_app/features/products/presentation/pages/products_view.dart';
-import 'package:grocery_app/generated/assets.dart';
 
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/resources/values_manager.dart';
 import '../../../../models/dto/product.dart';
 import '../../../../utils/dimensions.dart';
-import '../../../layout/presentation/cubit/layout_cubit.dart';
+import '../widgets/app_bar_categories.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});
@@ -47,11 +44,11 @@ class Categories extends StatelessWidget {
                         unselectedLabelColor: ColorManager.placeHolderColor2,
                         unselectedLabelStyle: getSemiBoldStyle(
                           color: ColorManager.offwhite,
-                          fontSize: AppSize.s20,
+                          fontSize: AppSize.s16,
                         ),
                         labelStyle: getSemiBoldStyle(
                           color: ColorManager.primaryColor,
-                          fontSize: AppSize.s20,
+                          fontSize: AppSize.s18,
                         ),
                         isScrollable: true,
                         indicator: const UnderlineTabIndicator(
@@ -65,7 +62,7 @@ class Categories extends StatelessWidget {
                           ),
                         ),
                         indicatorColor: ColorManager.primaryColor,
-                        indicatorWeight: 3,
+                        indicatorWeight: 1,
                         splashBorderRadius: BorderRadius.circular(AppSize.s20),
                         physics: const BouncingScrollPhysics(),
                         tabs: tabs,
@@ -252,48 +249,7 @@ class Categories extends StatelessWidget {
   }
 }
 
-class AppBarCategories extends StatelessWidget {
-  const AppBarCategories({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundColor: ColorManager.placeHolderColor,
-            radius: 22.1,
-            child: InkWell(
-                customBorder:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                onTap: () {
-                  LayoutCubit.get(context).changeIndex(0);
-                },
-                child: SvgPicture.asset(Assets.imagesBack)),
-          ),
-          SizedBox(
-            width: 14,
-          ),
-          Expanded(
-            child: CustomTextFormField(
-              controller: TextEditingController(),
-              hintText: 'Search products....',
-              prefixIcon: Padding(
-                padding: EdgeInsets.all(16),
-                child: SvgPicture.asset(
-                  Assets.imagesSearch,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class CategoryItem extends StatelessWidget {
   final String? title;

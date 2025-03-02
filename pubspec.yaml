@@ -68,6 +68,8 @@ dependencies:
   firebase_analytics: ^11.3.6
   firebase_crashlytics: ^4.2.0
   flutter_bloc: ^9.0.0
+  device_preview: ^1.2.0
+
 
 
 flutter_launcher_icons:

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:grocery_app/core/resources/routes_manager.dart';
-import 'package:grocery_app/utils/helper.dart';
 import 'package:grocery_app/utils/myTheme.dart';
 
 import 'core/di/di.dart';
@@ -16,8 +15,14 @@ Future<void> main() async {
   await CacheService.cacheInitialization();
   configureDependencies();
   Bloc.observer = MyBlocObserver();
-  await initDependencies();
-  runApp(const MyApp());
+  // await initDependencies();
+  runApp(
+    MyApp(),
+  );
+  // runApp(DevicePreview(
+  //   enabled: !kReleaseMode,
+  //   builder: (context) => MyApp(),
+  // ));
 }
 
 class MyApp extends StatelessWidget {

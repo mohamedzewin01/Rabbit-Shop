@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../features/auth/presentation/pages/registration.dart';
 import '../../features/categories/presentation/pages/categories.dart';
 import '../../features/home/presentation/pages/home_view.dart';
 import '../../features/layout/presentation/pages/layout_view.dart';
 import '../../features/profile/presentation/pages/profile.dart';
-import '../../views/registration.dart';
-import '../../views/splash.dart';
+import '../../splash.dart';
 import '../../welcome.dart';
 
 class RoutesManager {

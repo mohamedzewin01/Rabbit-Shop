@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_app/features/home/presentation/manager/home_cubit.dart';
 
 import '../../../../core/widgets/see_all_view.dart';
+import '../../../layout/presentation/cubit/layout_cubit.dart';
 import '../widgets/app_bar_body.dart';
 import '../widgets/carousel.dart';
 import '../widgets/grid_categories.dart';
@@ -36,7 +37,7 @@ class HomeView extends StatelessWidget {
                         context: context,
                         name: "Categories 🛍️",
                         onTapAction: () {
-                          /// TODO: ALL Categories
+                          LayoutCubit.get(context).changeIndex(1);
                         }),
                     SizedBox(
                       height: 16,
