@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'style_manager.dart';
+
 import 'color_manager.dart';
 import 'font_manager.dart';
+import 'style_manager.dart';
 import 'values_manager.dart';
 
 ThemeData getApplicationTheme() {
@@ -23,19 +24,19 @@ ThemeData getApplicationTheme() {
       errorStyle: getRegularStyle(color: ColorManager.error),
       enabledBorder: outLintInputBorderMethod(
         const BorderSide(color: ColorManager.black, width: AppSize.w1_5),
-        const BorderRadius.all(Radius.circular(AppSize.s20)),
+        const BorderRadius.all(Radius.circular(AppSize.s40)),
       ),
       focusedBorder: outLintInputBorderMethod(
         const BorderSide(color: ColorManager.grey, width: AppSize.w1_5),
-        const BorderRadius.all(Radius.circular(AppSize.s20)),
+        const BorderRadius.all(Radius.circular(AppSize.s40)),
       ),
       errorBorder: outLintInputBorderMethod(
         const BorderSide(color: ColorManager.error, width: AppSize.w1_5),
-        const BorderRadius.all(Radius.circular(AppSize.s20)),
+        const BorderRadius.all(Radius.circular(AppSize.s40)),
       ),
       focusedErrorBorder: outLintInputBorderMethod(
         const BorderSide(color: ColorManager.black, width: AppSize.w1_5),
-        const BorderRadius.all(Radius.circular(AppSize.s20)),
+        const BorderRadius.all(Radius.circular(AppSize.s40)),
       ),
     ),
   );

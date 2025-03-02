@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
-import '../constants/assets.dart';
 import '../core/resources/routes_manager.dart';
 import '../generated/assets.dart';
 
@@ -26,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: ColorManager.primaryColor,
       body: Center(
         child: Image.asset(
-          Assets.assetsImagesAppIcon,
+          Assets.imagesAppIcon,
           scale: 2.5,
         ),
       ),

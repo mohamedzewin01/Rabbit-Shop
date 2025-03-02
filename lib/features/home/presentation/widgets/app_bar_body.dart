@@ -27,7 +27,7 @@ class AppBarBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Rabbit Shop',
+                  'Rabbit',
                   style: TextStyle(
                       color: ColorManager.error,
                       fontWeight: FontWeight.w700,
@@ -56,7 +56,7 @@ class AppBarBody extends StatelessWidget {
               ),
               child: CircleAvatar(
                 child: Image.asset(
-                  Assets.assetsImagesAppIcon,
+                  Assets.imagesAppIcon,
                   scale: 4,
                 ),
               ),

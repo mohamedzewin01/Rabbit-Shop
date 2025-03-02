@@ -1,24 +1,12 @@
-import 'dart:developer';
-
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grocery_app/core/functions/extenstions.dart';
-import 'package:grocery_app/core/resources/color_manager.dart';
 import 'package:grocery_app/features/home/presentation/manager/home_cubit.dart';
 
-import '../../../../generated/assets.dart';
-import '../../../../utils/myTheme.dart';
-import '../../../../views/common_widgets/appBar.dart';
-import '../widgets/carousel.dart';
-import 'package:get/get.dart';
-import '../../../../core/widgets/categories_view.dart';
-import '../widgets/app_bar_body.dart';
-import '../widgets/dropDownHomeMenu.dart';
-import '../widgets/horizontal_product_list.dart';
 import '../../../../core/widgets/see_all_view.dart';
+import '../widgets/app_bar_body.dart';
+import '../widgets/carousel.dart';
 import '../widgets/grid_categories.dart';
+import '../widgets/horizontal_product_list.dart';
 import '../widgets/search_text_filed.dart';
 
 class HomeView extends StatelessWidget {
@@ -65,7 +53,7 @@ class HomeView extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child: Container(
+                      child: SizedBox(
                           height: 210,
                           //padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                           child: HorizontalProductList(

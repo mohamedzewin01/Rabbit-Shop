@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
-import '../constants/appConstantsApi.dart';
-import '../constants/assets.dart';
-import '../generated/assets.dart';
-import '../utils/helper.dart';
-import 'common_widgets/profileList.dart';
+import '../../../../constants/appConstantsApi.dart';
+import '../../../../generated/assets.dart';
+import '../../../../views/common_widgets/profileList.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});

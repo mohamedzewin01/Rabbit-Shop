@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:grocery_app/core/functions/extenstions.dart';
-import 'package:grocery_app/core/resources/color_manager.dart';
 
 import '../../../../core/widgets/categories_view.dart';
 import '../../../../generated/assets.dart';
@@ -13,15 +11,13 @@ class GridCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.screenHeight * 0.28,
+      height: 225,
       // color: ColorManager.primaryColor,
       child: GridView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 12 / 9,
-        ),
+          crossAxisCount: 2, mainAxisExtent: 85),
         itemBuilder: (context, index) => categories[index],
       ),
     );

@@ -265,7 +265,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: getRegularStyle(
-          color: ColorManager.placeHolderColor,
+          color: ColorManager.placeHolderColor2,
           fontSize: FontSize.s14,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -273,24 +273,27 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: outLintInputBorderMethod(
           const BorderSide(
               color: ColorManager.placeHolderColor, width: AppSize.w1_5),
-          const BorderRadius.all(Radius.circular(AppSize.s20)),
+          const BorderRadius.all(Radius.circular(AppSize.s40)),
         ),
         focusedBorder: outLintInputBorderMethod(
-          const BorderSide(color: ColorManager.orange, width: AppSize.w1_5),
-          const BorderRadius.all(Radius.circular(AppSize.s20)),
+          const BorderSide(
+              color: ColorManager.primaryColor, width: AppSize.w1_5),
+          const BorderRadius.all(Radius.circular(AppSize.s40)),
         ),
         errorBorder: outLintInputBorderMethod(
-          const BorderSide(color: ColorManager.error, width: AppSize.w1_5),
-          const BorderRadius.all(Radius.circular(AppSize.s20)),
+          const BorderSide(
+              color: ColorManager.primaryColor, width: AppSize.w1_5),
+          const BorderRadius.all(Radius.circular(AppSize.s40)),
         ),
         focusedErrorBorder: outLintInputBorderMethod(
-          const BorderSide(color: ColorManager.error, width: AppSize.w1_5),
-          const BorderRadius.all(Radius.circular(AppSize.s20)),
+          const BorderSide(
+              color: ColorManager.primaryColor, width: AppSize.w1_5),
+          const BorderRadius.all(Radius.circular(AppSize.s40)),
         ),
         disabledBorder: outLintInputBorderMethod(
             const BorderSide(
                 color: ColorManager.placeHolderColor, width: AppSize.w1_5),
-            const BorderRadius.all(Radius.circular(AppSize.s20))),
+            const BorderRadius.all(Radius.circular(AppSize.s40))),
       ),
       obscureText: obscureText ?? false,
       validator: validator,

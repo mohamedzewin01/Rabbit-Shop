@@ -8,6 +8,7 @@ class ColorManager {
   static const Color lightGrey = Color(0xffC7C7C7);
   static const Color white = Color(0xffFFFFFF);
   static const Color placeHolderColor = Color(0xffD9D9D9);
+  static const Color placeHolderColor2 = Color(0xff979899);
   static const Color error = Color(0xffFF0000);
   static const Color primary = Color(0xff98A2B3);
   static const Color fieldTextBorder = Color(0xffD3D3D3);

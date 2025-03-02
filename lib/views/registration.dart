@@ -4,9 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 import 'package:grocery_app/core/resources/routes_manager.dart';
 
-import '../constants/assets.dart';
 import '../generated/assets.dart';
-import 'common_widgets/appBar.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
@@ -35,7 +33,7 @@ class RegistrationScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Image.asset(
-                        Assets.assetsImagesAppIcon,
+                        Assets.imagesAppIcon,
                         scale: 4.0,
                       ),
                     ),

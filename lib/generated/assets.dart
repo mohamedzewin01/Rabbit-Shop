@@ -2,12 +2,10 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesAppIcon = 'assets/images/app_icon.png';
-  static const String assetsImagesCart = 'assets/images/cart.svg~';
   static const String imagesAddIcon = 'assets/images/add_icon.png';
-
-  // static const String imagesAppIcon = 'assets/images/appIcon.svg';
+  static const String imagesAppIcon = 'assets/images/app_icon.png';
   static const String imagesArExperience = 'assets/images/ar_experience.webp';
+  static const String imagesBack = 'assets/images/Back.svg';
   static const String imagesBanana = 'assets/images/banana.png';
   static const String imagesBanner1 = 'assets/images/banner1.webp';
   static const String imagesBanner2 = 'assets/images/banner2.webp';
@@ -29,6 +27,7 @@ class Assets {
   static const String imagesReviews = 'assets/images/reviews.png';
   static const String imagesRice = 'assets/images/rice.png';
   static const String imagesSavon = 'assets/images/savon.png';
+  static const String imagesSearch = 'assets/images/search.svg';
   static const String imagesSetting = 'assets/images/setting.svg';
   static const String imagesUser = 'assets/images/user.png';
   static const String imagesWelcomeBg = 'assets/images/welcome_bg.webp';

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 import 'package:grocery_app/core/resources/routes_manager.dart';
-import 'package:grocery_app/views/registration.dart';
-import 'constants/assets.dart';
+
 import 'generated/assets.dart';
-import 'views/common_widgets/appBar.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -41,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset(
-                                Assets.assetsImagesAppIcon,
+                                Assets.imagesAppIcon,
                                 scale: 4.0,
                               ),
                             ),

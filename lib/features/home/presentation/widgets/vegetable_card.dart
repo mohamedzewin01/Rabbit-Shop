@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocery_app/features/home/presentation/widgets/vegetable_detail.dart';
+
 import '../../../../models/dto/product.dart';
 
 class VegetableCardWidget extends StatelessWidget {
@@ -23,44 +23,16 @@ class VegetableCardWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                InkResponse(
-                  onTap: () {
-                    /// TODO : DETAILS
-                    ///
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => VegetableDetailScreen(
-                            product: Product(
-                                id: '11',
-                                quantity: '5',
-                                price: '25',
-                                categories: 'sasa',
-                                discount: '25',
-                                imagefrontsmallurl:
-                                    'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png',
-                                imagefronturl:
-                                    'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png',
-                                imagenutritionurl:
-                                    'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png',
-                                manufacturingplaces: 'sd',
-                                productname: 'mohammed',
-                                regularPrice: '55',
-                                stores: 'sadsa'),
-                          ),
-                        ));
-                  },
-                  child: Hero(
-                    tag: product.id!,
-                    child: CachedNetworkImage(
-                      imageUrl:
-                          'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png' ??
-                              "",
-                      width: 120,
-                      height: 120,
-                      filterQuality: FilterQuality.none,
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                    ),
+                Hero(
+                  tag: product.id!,
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png' ??
+                            "",
+                    width: 120,
+                    height: 120,
+                    filterQuality: FilterQuality.none,
+                    errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
                 ),
                 SizedBox(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/resources/values_manager.dart';
+
 class AppThemes {
   static final lightTheme1 = ThemeData(
     colorScheme: ColorScheme.light(
@@ -26,7 +28,7 @@ class AppThemes {
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(AppSize.s40),
           borderSide: BorderSide(width: 2, color: Color(0xff181842))),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
