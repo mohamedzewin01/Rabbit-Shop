@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
 class SearchTextFiled extends StatelessWidget {
