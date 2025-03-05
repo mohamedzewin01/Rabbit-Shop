@@ -15,14 +15,43 @@ abstract class DioModule {
         receiveTimeout: const Duration(milliseconds: 5000),
       ),
     );
-    dio.interceptors.add(PrettyDioLogger(
-        responseBody: true,
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true));
+
+    // Add headers
     dio.options.headers = {
       'Content-Type': 'application/json',
+      // 'Authorization': 'Bearer YOUR_TOKEN',
     };
+
+    // Add PrettyDioLogger
+    dio.interceptors.add(
+      PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseHeader: true,
+        responseBody: true,
+        compact: true,
+        maxWidth: 90,
+      ),
+    );
+
+    // Add Error Handling
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          print('Request: ${options.method} ${options.path}');
+          return handler.next(options);
+        },
+        onResponse: (response, handler) {
+          print('Response: ${response.statusCode}');
+          return handler.next(response);
+        },
+        onError: (DioError error, handler) {
+          print('Error: ${error.response?.statusCode} - ${error.message}');
+          return handler.next(error);
+        },
+      ),
+    );
+
     return dio;
   }
 }

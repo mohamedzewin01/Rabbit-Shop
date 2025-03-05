@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/features/home/presentation/widgets/product_card.dart';
+import 'package:grocery_app/features/home/presentation/widgets/product_card_deal.dart';
 
-import '../../../../models/dto/product.dart';
+import '../../data/models/response/HomeModelResponseDto.dart';
 
-class HorizontalProductList extends StatelessWidget {
-  const HorizontalProductList({super.key});
+class BestDealsProductList extends StatelessWidget {
+  const BestDealsProductList({super.key, required this.bestDeals});
 
+  final List<Products> bestDeals;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: 5,
+      itemCount: bestDeals.length,
       itemBuilder: (context, index) {
-        print("listView rebuild again");
         return FittedBox(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  ProductCardWidget(
-                    product: Product(
-                      id: ' 1',
-                      productname: "Tomato",
-                      quantity: '1',
-                      price: '20',
-                      imagefrontsmallurl:
-                          'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png',
-                      imagefronturl:
-                          'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png',
-                    ),
-                  ),
+                  ProductCardWidget(product: bestDeals[index]),
                   SizedBox(
                     width: 8,
                   )

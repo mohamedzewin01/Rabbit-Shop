@@ -2,9 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../constants/assets.dart';
+import '../../core/resources/assets_manager.dart';
 import '../../domain/cartViewModel.dart';
-import '../../generated/assets.dart';
 import '../../models/dto/cart.dart';
 
 class CartItemWidget extends StatelessWidget {

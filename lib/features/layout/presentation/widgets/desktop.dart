@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/features/layout/presentation/widgets/mobile.dart';
-import 'package:grocery_app/generated/assets.dart';
 
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class DesktopLayout extends StatelessWidget {

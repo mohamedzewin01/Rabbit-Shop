@@ -1,22 +1,35 @@
-// class AssetsManager {
-//   static String backgroundOnboarding =
-//       'assets/images/background_onboarding.png';
-//   static String backgroundRegister = 'assets/images/background-register.png';
-//   static String logo = 'assets/images/logo_icon.png';
-//   static String female = 'assets/images/female.svg';
-//   static String male = 'assets/images/male.svg';
-//   static String back = 'assets/images/Back.svg';
-//   static String lock = 'assets/images/lock.svg';
-//   static String mail = 'assets/images/mail.svg';
-//   static String user = 'assets/images/user.svg';
-//   static String eye = 'assets/images/eye.svg';
-//   static String onBoardingBackGround =
-//       "assets/images/backgroundOnboardingImage.png";
-//   static String onBoardingImage1 = "assets/images/iamgepage1.png";
-//   static String onBoardingImage2 = "assets/images/iamgepage2.png";
-//   static String onBoardingImage3 = "assets/images/iamgepage3.png";
-//   static String backgroundEditProfile = "assets/images/backgroundEditProfile.png";
-//   static String backgroundEditProfile1 = "assets/images/backgroundEditProfile1.png";
-//   static String editImage = "assets/images/edit_image.svg";
-//   static String userImageDefault = "assets/images/user_image_default.png";
-// }
+class Assets {
+  static const String assetsImagesBack = 'assets/images/Back.svg~';
+
+  static const String imagesAddIcon = 'assets/images/add_icon.png';
+  static const String imagesAppIcon = 'assets/images/app_icon.png';
+  static const String imagesArExperience = 'assets/images/ar_experience.webp';
+  static const String imagesBack = 'assets/images/Back.svg';
+  static const String imagesBanana = 'assets/images/banana.png';
+  static const String imagesBanner1 = 'assets/images/banner1.webp';
+  static const String imagesBanner2 = 'assets/images/banner2.webp';
+  static const String imagesBanner3 = 'assets/images/banner3.webp';
+  static const String imagesCalories = 'assets/images/calories.png';
+  static const String imagesCart = 'assets/images/cart.svg';
+  static const String imagesCategories = 'assets/images/categories.svg';
+  static const String imagesClosedCart = 'assets/images/closed_cart.png';
+  static const String imagesDish = 'assets/images/dish.png';
+  static const String imagesEmptyCart = 'assets/images/empty_cart.png';
+  static const String imagesEmptyList = 'assets/images/empty_list.png';
+  static const String imagesFalafel = 'assets/images/falafel.png';
+  static const String imagesFish = 'assets/images/fish.png';
+  static const String imagesHome = 'assets/images/home.svg';
+  static const String imagesHouse = 'assets/images/house.png';
+  static const String imagesIceCream = 'assets/images/iceCream.png';
+  static const String imagesLoading = 'assets/images/loading.json';
+  static const String imagesMakeup = 'assets/images/makeup.png';
+  static const String imagesOrganic = 'assets/images/organic.png';
+  static const String imagesRemoveIcon = 'assets/images/remove_icon.png';
+  static const String imagesReviews = 'assets/images/reviews.png';
+  static const String imagesRice = 'assets/images/rice.png';
+  static const String imagesSavon = 'assets/images/savon.png';
+  static const String imagesSearch = 'assets/images/search.svg';
+  static const String imagesSetting = 'assets/images/setting.svg';
+  static const String imagesUser = 'assets/images/user.png';
+  static const String imagesWelcomeBg = 'assets/images/welcome_bg.webp';
+}

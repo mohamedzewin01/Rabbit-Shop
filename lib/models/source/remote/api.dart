@@ -39,7 +39,7 @@ class ApiImpl implements Api {
       print("api return " + l.toString());
       return l;
     } on DioException catch (e) {
-      // The request was made and the server responded with a status code
+      // The response was made and the server responded with a status code
       // that falls out of the range of 2xx and is also not 304.
       if (e.response != null) {
         print(e.response?.data);
@@ -49,7 +49,7 @@ class ApiImpl implements Api {
         //  API responds with 404 when reached the end
         if (e.response?.statusCode == 404) return [];
       } else {
-        // Something happened in setting up or sending the request that triggered an Error
+        // Something happened in setting up or sending the response that triggered an Error
         print(e.requestOptions);
         print(e.message);
       }
@@ -76,7 +76,7 @@ class ApiImpl implements Api {
         return Product(); // Adjust this line based on your Product class
       }
     } on DioException catch (e) {
-      // The request was made and the server responded with a status code
+      // The response was made and the server responded with a status code
       // that falls out of the range of 2xx and is also not 304.
       if (e.response != null) {
         print(e.response?.data);
@@ -86,7 +86,7 @@ class ApiImpl implements Api {
         //  API responds with 404 when reached the end
         //if (e.response?.statusCode == 404) return l;
       } else {
-        // Something happened in setting up or sending the request that triggered an Error
+        // Something happened in setting up or sending the response that triggered an Error
         print(e.requestOptions);
         print(e.message);
       }

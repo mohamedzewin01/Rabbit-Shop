@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/core/resources/cashed_image.dart';
 
 class CategoriesView extends StatelessWidget {
   const CategoriesView({
@@ -18,12 +19,8 @@ class CategoriesView extends StatelessWidget {
           backgroundColor: Theme.of(context).cardColor,
           radius: 35,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(
-              imagePath,
-              scale: 1,
-            ),
-          ),
+              padding: const EdgeInsets.all(8.0),
+              child: CustomImage(url: imagePath)),
         ),
         SizedBox(
           height: 4,

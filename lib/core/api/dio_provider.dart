@@ -7,7 +7,7 @@
 //
 //   dio.interceptors.add(PrettyDioLogger(
 //       requestBody: true,
-//       request: true,
+//       response: true,
 //       responseHeader: true,
 //       responseBody: true,
 //       requestHeader: true));

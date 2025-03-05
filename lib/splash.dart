@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
+import 'core/resources/assets_manager.dart';
 import 'core/resources/routes_manager.dart';
-import 'generated/assets.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
-import '../../../../generated/assets.dart';
 import 'dropDownHomeMenu.dart';
 
 class AppBarBody extends StatelessWidget {

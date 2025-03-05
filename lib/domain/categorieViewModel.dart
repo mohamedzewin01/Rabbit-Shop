@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
-import '../constants/assets.dart';
-import '../generated/assets.dart';
+import '../core/resources/assets_manager.dart';
 import '../models/dto/categorie.dart';
 import '../utils/myStates.dart';
 

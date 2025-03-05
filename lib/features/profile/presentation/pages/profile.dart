@@ -4,8 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
-import '../../../../constants/appConstantsApi.dart';
-import '../../../../generated/assets.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../widgets/profileList.dart';
 
 class Profile extends StatelessWidget {
@@ -105,7 +104,7 @@ class Profile extends StatelessWidget {
                                 height: 8,
                               ),
                               Text(
-                                "Made With ❤️ By #${AppConstantsApi.projectOwnerName}",
+                                "Made With ❤️ By ",
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.normal),

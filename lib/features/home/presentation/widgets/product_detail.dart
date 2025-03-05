@@ -1,24 +1,24 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:grocery_app/core/resources/cashed_image.dart';
 import 'package:grocery_app/core/resources/color_manager.dart';
 
-import '../../../../generated/assets.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../models/dto/cart.dart';
-import '../../../../models/dto/product.dart';
 import '../../../../views/common_widgets/appBar.dart';
+import '../../data/models/response/HomeModelResponseDto.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key, required this.product});
 
-  final Product product;
+  final Products product;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(
-        title: Text(product.productname ?? ''),
+        title: Text(product.nameProduct ?? ''),
         leading: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
           child: InkWell(
@@ -64,14 +64,11 @@ class ProductDetailScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: Hero(
-                        tag: product.id!,
-                        child: CachedNetworkImage(
-                          imageUrl: product.imagefronturl ?? "",
+                        tag: product.idProduct!,
+                        child: CustomImage(
+                          url: product.imageProduct ?? '',
                           width: 140,
                           height: 180,
-                          filterQuality: FilterQuality.low,
-                          errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
                         ),
                       ),
                     ),
@@ -86,7 +83,7 @@ class ProductDetailScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "${product.price ?? 0.00} SAR",
+                          "${product.priceNew ?? 0.00} SAR",
                           style: TextStyle(
                             color: Color(0xffFF324B),
                             fontSize: 20,
@@ -97,7 +94,7 @@ class ProductDetailScreen extends StatelessWidget {
                           height: 14,
                         ),
                         Text(
-                          product.productname ?? "????",
+                          product.nameProduct ?? "????",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.normal,
@@ -107,7 +104,7 @@ class ProductDetailScreen extends StatelessWidget {
                           height: 14,
                         ),
                         Text(
-                          "Quantity : ${product.quantity}",
+                          "Quantity : ${product.qunantity}",
                           style: TextStyle(
                             color: Get.theme.primaryColor,
                             fontSize: 14,
@@ -118,7 +115,7 @@ class ProductDetailScreen extends StatelessWidget {
                           height: 14,
                         ),
                         Text(
-                          "tags: ${product.categories}",
+                          "tags: ${product.nameCategory}",
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.normal),
                         ),
@@ -173,7 +170,7 @@ class ProductDetailScreen extends StatelessWidget {
                           SizedBox(
                             height: 4,
                           ),
-                          Text("${product.price ?? 10.00}",
+                          Text("${product.priceNew ?? 10.00}",
                               style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.red,

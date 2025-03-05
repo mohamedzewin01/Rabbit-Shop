@@ -1,17 +1,20 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery_app/features/home/presentation/widgets/product_detail.dart';
 
-import '../../../../models/dto/product.dart';
+import '../../../../core/resources/cashed_image.dart';
+import '../../../home/data/models/response/HomeModelResponseDto.dart';
 
-class ProductCardWidget extends StatelessWidget {
-  final Product product;
+class ProductCard extends StatelessWidget {
+  final Products product;
 
-  const ProductCardWidget({super.key, required this.product});
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
+    log('${product.imageProduct}');
     return Material(
       child: GestureDetector(
         onTap: () => Navigator.push(
@@ -30,17 +33,10 @@ class ProductCardWidget extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Hero(
-                    tag: product.id!,
-                    child: CachedNetworkImage(
-                      imageUrl:
-                          'https://artawiya.com/fadaalhalj/api/v1/upload/7472tomtom.png' ??
-                              "",
-                      width: 120,
-                      height: 120,
-                      filterQuality: FilterQuality.none,
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                    ),
+                  CustomImage(
+                    url: product.imageProduct ?? '',
+                    width: 120,
+                    height: 120,
                   ),
                   SizedBox(
                     height: 8,
@@ -48,7 +44,7 @@ class ProductCardWidget extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      product.price ?? "10da",
+                      product.priceOld.toString(),
                       style: TextStyle(
                         color: Color(0xffFF324B),
                         fontSize: 16,
@@ -60,7 +56,7 @@ class ProductCardWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        product.regularPrice ?? "20da",
+                        product.priceNew.toString(),
                         style: TextStyle(
                             decoration: TextDecoration.lineThrough,
                             color: Get.theme.colorScheme.primary,
@@ -71,7 +67,7 @@ class ProductCardWidget extends StatelessWidget {
                         width: 8,
                       ),
                       Text(
-                        product.discount ?? "20%",
+                        "${product.discount}55%",
                         style: TextStyle(
                             color: Color.fromARGB(255, 27, 133, 185),
                             fontSize: 10,
@@ -82,7 +78,7 @@ class ProductCardWidget extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      product.productname ?? "????",
+                      product.nameProduct ?? "????",
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: Colors.black,
@@ -115,7 +111,7 @@ class ProductCardWidget extends StatelessWidget {
                   padding: EdgeInsets.all(8),
                   child: Column(
                     children: [
-                      Text(product.discount ?? "20%",
+                      Text("${product.discount}%",
                           style: TextStyle(
                               fontSize: 8,
                               fontWeight: FontWeight.bold,
