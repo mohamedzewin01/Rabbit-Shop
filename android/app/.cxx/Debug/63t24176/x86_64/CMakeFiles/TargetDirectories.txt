@@ -1,0 +1,2 @@
+D:/StudioProjects/Rabbit-Shop/android/app/.cxx/Debug/63t24176/x86_64/CMakeFiles/edit_cache.dir
+D:/StudioProjects/Rabbit-Shop/android/app/.cxx/Debug/63t24176/x86_64/CMakeFiles/rebuild_cache.dir

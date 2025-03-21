@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'l10n/app_localizations.dart';
+import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:grocery_app/core/resources/routes_manager.dart';
 import 'package:grocery_app/utils/myTheme.dart';
@@ -8,6 +9,7 @@ import 'package:grocery_app/utils/myTheme.dart';
 import 'core/di/di.dart';
 import 'core/utils/cashed_data_shared_preferences.dart';
 import 'core/utils/my_bloc_observer.dart';
+
 import 'localization/locale_cubit.dart';
 
 Future<void> main() async {
